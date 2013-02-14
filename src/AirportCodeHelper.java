@@ -1,3 +1,4 @@
+import java.util.ArrayList;
 import java.util.List;
 
 public class AirportCodeHelper {
@@ -12,10 +13,14 @@ public class AirportCodeHelper {
     }
 
     private List<String> parseAirportCodes(String allAirportCodes) {
-        return null;
+        List<String> airportCodes = new ArrayList<String>();
+
+        String[] codes = allAirportCodes.split("\n");
+        for(String airportCode : codes){
+            airportCodes.add(airportCode);
+        }
+        return airportCodes;
     }
-
-
 
     public List<String> getAirportCodes() {
         return airPortCodes;
