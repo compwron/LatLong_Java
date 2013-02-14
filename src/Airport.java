@@ -11,7 +11,7 @@ public class Airport {
         latitude = parseLatitude(htmlSnippet);
         longitude = parseLongitude(htmlSnippet);
         airportCode = parseAirportCode(htmlSnippet);
-        sql = generateSql(latitude, longitude, airportCode);
+        sql = generateSql();
     }
 
     private Double parseLongitude(String htmlSnippet){
@@ -33,8 +33,7 @@ public class Airport {
         return matcher.matches() ? matcher.group(1): null;
     }
 
-    private String generateSql(Double latitude2, Double longitude2,
-                               String airportCode2) {
+    private String generateSql() {
         return "update station set latitude=("+latitude+"), longitude=("+longitude+") where airport_code = '"+airportCode+"';";
     }
 
