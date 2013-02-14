@@ -1,8 +1,5 @@
-Probability
-===========
-Implement these user stories using TDD as though you mean it:
+To get sql insert statements for latitude and longitude of airports
 
-1.  I want to know if a coin flip resulted in a heads
-2.  I want to know if a die rolled a '6'
-3.  I want to know if one die results in a '6' and a coin flip is heads
-4.  I want to know if one die results in a '6' or a coin flip is heads
+Note: the website may respond slowly? App might need a caching layer so that we don't have to start over or adjust station list manually if web connection is inturrupted.
+
+Paste list of stations into AirportCodeHelper
