@@ -6,26 +6,21 @@ import java.net.URL;
 
 public class ConnectUtil {
 
-
-    //	HttpURLConnection con = (HttpURLConnection) new URL("https://www.example.com").openConnection();
-//	con.setRequestMethod("POST");
-//	con.getOutputStream().write("LOGIN".getBytes("UTF-8"));
-//	con.getInputStream();
     public String getAirportData(String airportCode){
-        HttpURLConnection con = connectionTo(urlFor(airportCode));
-        return "";
+        return htmlFrom(urlFor(airportCode));
     }
 
     String urlFor(String airportCode) {
-        return "";
+        return "http://airnav.com/airport/" + airportCode;
     }
 
-    private HttpURLConnection connectionTo(String url){
+    String htmlFrom(String url){
         try {
-            return (HttpURLConnection) new URL("https://www.example.com").openConnection();
+            HttpURLConnection connection = (HttpURLConnection) new URL(url).openConnection();
+            return connection.getResponseMessage();
         } catch (IOException e) {
             e.printStackTrace();
         }
-        return null;
+        return "";
     }
 }
