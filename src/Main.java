@@ -10,6 +10,7 @@ public class Main {
         ConnectUtil connectUtil = new ConnectUtil();
         AirportCodeHelper helper = new AirportCodeHelper();
         List<String> airportCodes = helper.getAirportCodes();
+
         for (String airportCode : airportCodes){
             Airport airport = new Airport(connectUtil.getAirportData(airportCode));
             System.out.println(airport.getSql());

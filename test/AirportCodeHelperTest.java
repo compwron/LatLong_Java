@@ -9,15 +9,14 @@ import static junit.framework.Assert.assertEquals;
 public class AirportCodeHelperTest {
 
     @Test
-    public void shouldReturnListOfAirportCodesWhenGivenAirportCodesAsALinebreakSeparatedString(){
-        AirportCodeHelper helper = new AirportCodeHelper("DAL\nHOU\nABQ");
-//        AirportCodeHelper helper = new AirportCodeHelper();
+    public void shouldReturnListOfAirportCodesWhenGivenAirportCodesAsALinebreakSeparatedStringWithTrainingLinebreak(){
+        AirportCodeHelper helper = new AirportCodeHelper();
 
         List<String> expectedList = new ArrayList<String>();
         expectedList.add("DAL");
         expectedList.add("HOU");
         expectedList.add("ABQ");
 
-        assertEquals(expectedList, helper.getAirportCodes());
+        assertEquals(expectedList, helper.parseAirportCodes("DAL\nHOU\nABQ\n"));
     }
 }

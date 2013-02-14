@@ -8,18 +8,14 @@ public class AirportCodeHelper {
         this.airPortCodes = parseAirportCodes(longListOfStationCodes);
     }
 
-    public AirportCodeHelper(String allAirportCodes){
-        this.airPortCodes = parseAirportCodes(allAirportCodes);
-    }
+    List<String> parseAirportCodes(String airportCodes) {
+        List<String> codeList = new ArrayList<String>();
 
-    private List<String> parseAirportCodes(String allAirportCodes) {
-        List<String> airportCodes = new ArrayList<String>();
-
-        String[] codes = allAirportCodes.split("\n");
+        String[] codes = airportCodes.split("\n");
         for(String airportCode : codes){
-            airportCodes.add(airportCode);
+            codeList.add(airportCode);
         }
-        return airportCodes;
+        return codeList;
     }
 
     public List<String> getAirportCodes() {
