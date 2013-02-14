@@ -7,13 +7,11 @@ import java.util.List;
 import static junit.framework.Assert.assertEquals;
 
 public class AirportCodeHelperTest {
-    @Before
-    public void setUp(){
-    }
 
     @Test
-    public void shouldContainSqlWhenGivenAirportCode(){
+    public void shouldReturnListOfAirportCodesWhenGivenAirportCodesAsALinebreakSeparatedString(){
         AirportCodeHelper helper = new AirportCodeHelper("DAL\nHOU\nABQ");
+//        AirportCodeHelper helper = new AirportCodeHelper();
 
         List<String> expectedList = new ArrayList<String>();
         expectedList.add("DAL");
