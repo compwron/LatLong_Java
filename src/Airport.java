@@ -15,20 +15,20 @@ public class Airport {
     }
 
     private Double parseLongitude(String htmlSnippet){
-        Pattern pattern = Pattern.compile(".*latitude=.*&longitude=(.*)&.*");;
+        Pattern pattern = Pattern.compile(".*latitude=.*&longitude=(.*?)&.*", Pattern.DOTALL);;
         Matcher matcher = pattern.matcher(htmlSnippet);
         return matcher.matches() ? Double.valueOf(matcher.group(1)): null;
     }
 
     private Double parseLatitude(String htmlSnippet){
-        Pattern pattern = Pattern.compile(".*latitude=(.*)&longitude.*");
+        Pattern pattern = Pattern.compile(".*latitude=(.*?)&longitude.*", Pattern.DOTALL);
         Matcher matcher = pattern.matcher(htmlSnippet);
         return matcher.matches() ? Double.valueOf(matcher.group(1)): null;
     }
 
 
     private String parseAirportCode(String htmlSnippet){
-        Pattern pattern = Pattern.compile(".*&name=(.{3}).*");
+        Pattern pattern = Pattern.compile(".*&name=(.{3}).*", Pattern.DOTALL);
         Matcher matcher = pattern.matcher(htmlSnippet);
         return matcher.matches() ? matcher.group(1): null;
     }

@@ -20,7 +20,7 @@ public class AirportTest {
 
     @Before
     public void setUp(){
-        airport = new Airport("&latitude=11.111111&longitude=11.111112&name=FOOW");
+        airport = new Airport("\n&latitude=11.111111&longitude=11.111112&name=FOOW");
     }
 
     @Test
